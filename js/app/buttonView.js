@@ -5,7 +5,7 @@ define(["jquery", "underscore","backbone"], function($)	{
 						tagName: 'button',
 						events: {'click': 'onClick'},
 						onClick: function(e){
-								//alert($(e.currentTarget).text());
+								
 								var val = $(e.currentTarget).text();
 								//if (console.log) console.log(val);
 								
