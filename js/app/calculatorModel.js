@@ -52,7 +52,7 @@ define(["jquery", "underscore","backbone"], function($)	{
 							var result;
 							if (func){
 								result = func(a,b);
-								if (isNaN(result)) result = 0;
+								if (! $.isNumeric(result)) result = 0;
 								this.set({
 											'current': String(result) 
 												 });
