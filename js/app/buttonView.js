@@ -6,10 +6,7 @@ define(["jquery", "underscore","backbone"], function($)	{
 						events: {'click': 'onClick'},
 						onClick: function(e){
 								
-								var val = $(e.currentTarget).text();
-								//if (console.log) console.log(val);
-								
-							
+							var val = $(e.currentTarget).text();
 								
 							},
 						render: function() {
