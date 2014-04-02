@@ -20,6 +20,7 @@ define(["jquery", "underscore","backbone","app/buttonView","app/displayView"], f
             $(parentId).append( b.render().el );
           }
           //spacing hack
+          // Crazy stuff here...
           generateButton("#row1",'-','hide');
           //spacing hack 
           generateButton("#row1",'-','hide');
