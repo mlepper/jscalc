@@ -1,8 +1,5 @@
 //calculator model
-
-var app = app || {}
-
-define(["jquery", "underscore","backbone"], function($)	{
+define(["jquery", "underscore","backbone"], function($,_,backbone)	{
 			var operations = {
 							none: undefined,
 							"+": function(a,b) { return a+b;},
@@ -11,7 +8,7 @@ define(["jquery", "underscore","backbone"], function($)	{
 							"/": function(a,b) {return a/b}
 							};
 							
-	app.Calculator = Backbone.Model.extend({
+	return backbone.Model.extend({
 						operations: operations,
 						
 						defaults: {

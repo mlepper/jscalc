@@ -1,8 +1,7 @@
 //renders the calculator on the page
-var app = app || {};
 
-define(["jquery", "underscore","backbone","app/buttonView","app/displayView","app/calculatorModel"], function($)	{
-  app.MainView = Backbone.View.extend(
+define(["jquery", "underscore","backbone","app/buttonView","app/displayView"], function($, _, backbone, buttonView, displayView)	{
+  return backbone.View.extend(
       {
         el: $('#calcContainer'),
         
@@ -11,13 +10,13 @@ define(["jquery", "underscore","backbone","app/buttonView","app/displayView","ap
         },     
         render: function() {
           //render the input field showing the main numerical display
-          this.display = new app.DisplayView({model:this.model});
+          this.display = new displayView({model:this.model});
           $("#display").append(this.display.render().el);
           
           //helper function to generate calculator buttons
           var generateButton= function(parentId, value, className){
             var model = new Backbone.Model({ value: value,  className: className === undefined ? '' : className});
-            var b = new app.ButtonView( {	model: model } );
+            var b = new buttonView( {	model: model } );
             $(parentId).append( b.render().el );
           }
           //spacing hack
@@ -59,12 +58,10 @@ define(["jquery", "underscore","backbone","app/buttonView","app/displayView","ap
           
         onNumberClick: function(e){
           var val = $(e.currentTarget).text()
-          if (console.log) console.log(val);
           this.model.numberInput(val);
         },
         onOperationClick: function(e) {
           var val = $(e.currentTarget).text()
-          if (console.log) console.log(val);
           this.model.operationInput(val);
         },
         onEqualsClick: function(e) {
@@ -81,9 +78,6 @@ define(["jquery", "underscore","backbone","app/buttonView","app/displayView","ap
   
   
   );
-
-  //create the main view
-  app.view = new app.MainView({model: new app.Calculator({})});
 });
 
 

@@ -1,14 +1,14 @@
-var app = app || {}
 
-define(["jquery", "underscore","backbone"], function($)	{
-	app.ButtonView = Backbone.View.extend({
+
+define(["jquery", "underscore","backbone"], function($, _, backbone)	{
+	return backbone.View.extend({
 						tagName: 'button',
 						events: {'click': 'onClick'},
 						onClick: function(e){
 								
-							var val = $(e.currentTarget).text();
+							//var val = $(e.currentTarget).text();
 								
-							},
+						},
 						render: function() {
 							
 							this.$el.text(this.model.get('value'));

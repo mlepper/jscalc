@@ -7,5 +7,10 @@ requirejs.config(
 
 });
 
+//
+require(["app/calculatorModel", "app/mainView"], function(model, view){
 
-requirejs(["app/mainView"]);
+	
+	var calcView = new view({model: new model({})});
+
+});
