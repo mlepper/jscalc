@@ -21,6 +21,7 @@ define(["jquery", "underscore","backbone","app/buttonView","app/displayView"], f
           }
           //spacing hack
           // Crazy stuff here...
+          // Change number 2
           generateButton("#row1",'-','hide');
           //spacing hack 
           generateButton("#row1",'-','hide');
