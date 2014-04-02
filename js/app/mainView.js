@@ -19,6 +19,7 @@ define(["jquery", "underscore","backbone","app/buttonView","app/displayView"], f
             $(parentId).append( b.render().el );
           }
           //spacing hack
+          // Just adding a comment...
           generateButton("#row1",'-','hide');
           //spacing hack 
           generateButton("#row1",'-','hide');
