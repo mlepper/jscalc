@@ -1,5 +1,3 @@
-
-
 define(["jquery", "underscore","backbone"], function($, _, backbone)	{
 	return backbone.View.extend({
 						tagName: 'button',
